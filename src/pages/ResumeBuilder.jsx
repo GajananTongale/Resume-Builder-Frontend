@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from "react-router-dom";
-import { dummyResumeData } from "../assets/assets.js";
 import {
     ArrowLeftIcon,
     Briefcase,
@@ -37,7 +36,7 @@ const ResumeBuilder = () => {
         professional_summary: '',
         experience: [],
         education: [],
-        projects: [],
+        project: [],
         skills: [],
         template: "classic",
         accent_color: "",
@@ -181,8 +180,8 @@ const ResumeBuilder = () => {
                                 {activeSection.id === 'education' && (
                                     <EducationForm data={resumeData.education} onChange={(data)=>setResumeData(prev=>({...prev,education: data}))}/>
                                 )}
-                                {activeSection.id === 'projects' && (
-                                    <ProjectForm data={resumeData.projects} onChange={(data)=>setResumeData(prev=>({...prev,projects: data}))}/>
+                                {activeSection.id === 'project' && (
+                                    <ProjectForm data={resumeData.project} onChange={(data)=>setResumeData(prev=>({...prev,project: data}))}/>
                                 )}
                                 {activeSection.id === 'skills' && (
                                     <SkillsForm data={resumeData.skills} onChange={(data)=>setResumeData(prev=>({...prev,skills: data}))}/>
